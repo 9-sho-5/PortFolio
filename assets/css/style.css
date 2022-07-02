@@ -374,6 +374,12 @@ h1 {
   -webkit-text-fill-color: transparent;
 }
 
+#sns-wrap a:hover i.fa-pen {
+  background: linear-gradient(43deg, #057139 0%, #37ee5e 46%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 #sns-wrap a:hover::before {
   -webkit-transform: scale(0);
           transform: scale(0);
@@ -391,6 +397,10 @@ h1 {
 
 #sns-wrap a.github::before {
   background: linear-gradient(43deg, #000000 0%, #3d4651 46%, #ffffff 100%);
+}
+
+#sns-wrap a.qiita::before {
+  background: linear-gradient(43deg, #057139 0%, #37ee5e 46%, #ffffff 100%);
 }
 
 #sns-wrap a::before {

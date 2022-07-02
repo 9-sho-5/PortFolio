@@ -122,21 +122,26 @@ Template Name: メインページ
         </div>
     </section>
 
-    <section id="box4" class="box" data-section-name="Links">
+    <section class="box" data-section-name="Links">
         <ul id="sns-wrap">
             <li>
-                <a href="https://www.instagram.com/ho_sho_/" class="instagram">
+                <a href="https://www.instagram.com/ho_sho_/" class="instagram" target="_blank" rel="noopener noreferrer">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
             </li>
             <li>
-                <a href="https://twitter.com/tr1ruqbc7uy7gq1" class="twitter">
+                <a href="https://twitter.com/tr1ruqbc7uy7gq1" class="twitter" target="_blank" rel="noopener noreferrer">
                     <i class="fa-brands fa-twitter"></i>
                 </a>
             </li>
             <li>
-                <a href="https://github.com/9-sho-5" class="github">
+                <a href="https://github.com/9-sho-5" class="github" target="_blank" rel="noopener noreferrer">
                     <i class="fa-brands fa-github"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://qiita.com/sho_Mc" class="qiita" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-solid fa-pen"></i>
                 </a>
             </li>
         </ul>

@@ -295,6 +295,11 @@ h1{
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                 }
+                &.fa-pen{
+                    background: linear-gradient(43deg, #057139 0%, #37ee5e 46%, #ffffff 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
             }
             &::before{
                 transform: scale(0);
@@ -309,6 +314,9 @@ h1{
         }
         &.github::before{
             background: linear-gradient(43deg, #000000 0%, #3d4651 46%, #ffffff 100%);
+        }
+        &.qiita::before{
+            background: linear-gradient(43deg, #057139 0%, #37ee5e 46%, #ffffff 100%);
         }
         &::before{
             transform: scale(1);
