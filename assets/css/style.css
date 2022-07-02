@@ -31,6 +31,10 @@ section {
   z-index: 0;
 }
 
+section.top {
+  z-index: 99;
+}
+
 section .content {
   max-width: 1030px;
   margin: auto;
@@ -71,12 +75,103 @@ section .content .name-wrap .kana {
   text-align: left;
 }
 
+section .content .card {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  /* 3Dにする宣言 */
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  /* 奥行きの宣言 */
+  -webkit-perspective: 600px;
+          perspective: 600px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+section .content .card:hover .card-front {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
+section .content .card:hover .card-back {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+
+section .content .card .card-back, section .content .card .card-front {
+  border-radius: 50%;
+}
+
+section .content .card .card-front {
+  height: 100%;
+  width: 100%;
+  background-image: url(../images/illust_icon.PNG);
+  background-position: 50% 50%;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  /* 背後の面を表示させるかの宣言 */
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+section .content .card .card-back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-transition: .5s;
+  transition: .5s;
+  text-align: center;
+}
+
+section .content .card .card-back p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  width: 100%;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+section .content .card .card-back p span {
+  font-size: 20px;
+  color: #ffffff;
+}
+
 section .content h3 {
   margin: 90px 0 30px;
   font-size: 30px;
   line-height: 32px;
   letter-spacing: 1.5px;
   font-family: "tegaki";
+  text-decoration: underline;
+}
+
+section .content h4 {
+  margin: 0 0 40px;
+  font-size: 30px;
+  letter-spacing: 1.5px;
   text-decoration: underline;
 }
 
@@ -150,6 +245,34 @@ section .content .year_ladder .year_item .month-wrap .month span {
   letter-spacing: 1.5px;
   color: #222222;
   font-family: "tegaki";
+}
+
+section .content .item-wrap {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-grid-columns: (280px)[auto-fill];
+      grid-template-columns: repeat(auto-fill, 280px);
+  -webkit-column-gap: 25px;
+          column-gap: 25px;
+  z-index: -1;
+}
+
+section .content .item-wrap .item {
+  width: 280px;
+  height: 280px;
+  margin-bottom: 30px;
+}
+
+section .content .item-wrap .item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-color: #0028f7;
 }
 
 h1 {
@@ -299,7 +422,7 @@ footer {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  z-index: -1;
+  z-index: 1;
 }
 
 footer::after {

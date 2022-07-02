@@ -6,18 +6,24 @@ Template Name: メインページ
 <? get_header(); ?>
 
 <main>
-    <section id="box1" class="box" data-section-name="Top">
+    <section class="box top" data-section-name="Top">
         <div class="img-wrap">
             <img src="<?php echo get_template_directory_uri(); ?>/./assets/images/main_img.jpg" alt="">
         </div>
         <h1>PROTFOLIO</h1>
     </section>
 
-    <section id="box2" class="box" data-section-name="Intro">
+    <section class="box" data-section-name="Intro">
         <div class="content">
             <div class="name-wrap">
                 <span>楠瀬 法生</span>
                 <h2 class="kana">HOSHO KUSUNOSE</h2>
+            </div>
+            <div class="card">
+                <div class="card-front"></div>
+                <div class="card-back">
+                    <p>@Life is Tech!<br>"ほしょ"</p>
+                </div>
             </div>
             <p class="introduction">
                 2001年、11月生まれのさそり座。
@@ -78,9 +84,44 @@ Template Name: メインページ
         </div>
     </section>
 
-    <section id="box3" class="box" data-section-name="Works">
-
+    <section class="box" data-section-name="Works">
+        <div class="content">
+            <h4>Works</h4>
+            <div class="item-wrap">
+                <div class="item">
+                    <a href="">
+                        <img src="" alt="">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="">
+                        <img src="" alt="">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="">
+                        <img src="" alt="">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="">
+                        <img src="" alt="">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="">
+                        <img src="" alt="">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="">
+                        <img src="" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
+
     <section id="box4" class="box" data-section-name="Links">
         <ul id="sns-wrap">
             <li>
