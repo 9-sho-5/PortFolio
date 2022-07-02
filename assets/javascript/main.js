@@ -23,7 +23,7 @@ $.scrollify({
     });
     pagination += "</ul>";
     
-    $("#box1").append(pagination);//はじめのエリアにページネーションを表示
+    $("main").append(pagination);//はじめのエリアにページネーションを表示
     $(".pagination a").on("click",$.scrollify.move);
     }
     
