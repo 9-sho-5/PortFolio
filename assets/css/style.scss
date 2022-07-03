@@ -131,7 +131,6 @@ section{
             line-height: 32px;
             letter-spacing: 1.5px;
             font-family: "tegaki";
-            text-decoration: underline;
         }
         h4{
             margin: 0 0 40px;
@@ -181,6 +180,7 @@ section{
                             letter-spacing: 1.5px;
                             color: #1A1A1A;
                             font-family: "tegaki";
+                            word-break: break-all;
                         }
                         span{
                             width: fit-content;
@@ -198,11 +198,12 @@ section{
         }
         .item-wrap{
             display: grid;
-            justify-content: space-between;
+            justify-content: center;
             grid-template-columns: repeat(auto-fill, 280px);
             column-gap: 25px;
             z-index: -1;
             .item{
+                position: relative;
                 width: 280px;
                 height: 280px;
                 margin-bottom: 30px;
@@ -212,6 +213,15 @@ section{
                     height: 100%;
                     object-fit: cover;
                     background-color: #0028f7;
+                }
+                span{
+                    position: absolute;
+                    left: 10px;
+                    bottom: 10px;
+                    padding: 10px;
+                    background-color: #FFFFFF;
+                    border-radius: 20px;
+                    font-family: "tegaki";
                 }
             }
         }
@@ -232,6 +242,7 @@ h1{
 .img-wrap{
     position: relative;
     width: 100vw;
+    height: 100vh;
     z-index: 0;
     &::before {
         content: "";         /* 疑似要素に必須 */
@@ -256,6 +267,8 @@ h1{
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+    display: flex;
+    column-gap: 10px;
     li{
         position: relative;
         display: inline-block;
@@ -340,6 +353,7 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
+    letter-spacing: -2px;
     z-index: 1;
     &::after {
         content: "";         /* 疑似要素に必須 */
@@ -353,6 +367,96 @@ footer{
         z-index: -1;
     }
 }
+
+@media screen and (max-width:  1280px) {
+    h1{
+        top: 85%;
+        left: 50%;
+        font-size: 75px;
+    }
+    section{
+        .content{
+            padding: 90px 40px;
+            .name-wrap{
+                span{
+                    font-size: 35px;
+                }
+                .kana{
+                    font-size: 35px;
+                }
+            }
+            .card{
+                height: 200px;
+                width: 200px;
+            }
+            .year_ladder{
+                .year_item{
+                    .month-wrap{
+                        .month{
+                            p{
+                                width: 70%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:  768px) {
+    h1{
+        font-size: 45px;
+    }
+    section{
+        .content{
+            .name-wrap{
+                span, .kana{
+                    font-size: 25px
+                }
+            }
+            .card{
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:  450px) {
+    h1{
+        position: absolute;
+        top: 50%;
+        left: -40%;
+        transform: rotate(90deg);
+        filter: drop-shadow(5px 5px 5px #222222); 
+    }
+    .year_ladder{
+        .year_item{
+            flex-direction: column;
+            .year{
+                margin-bottom: 20px;
+                font-size: 20px;
+            }
+            .month-wrap .month{
+                span{
+                    font-size: 14px;
+                }
+                p{
+                    width: 65%;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    section{
+        .content{
+            p{
+                line-height: 32px;
+            }
+        }
+    }
+}
+
 
 /*========= ページネーションCSS ===============*/
 

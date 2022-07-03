@@ -90,6 +90,32 @@ Template Name: メインページ
             <div class="item-wrap">
                 <div class="item">
                     <a href="">
+                        <img src="https://images.unsplash.com/photo-1508515053963-70c7cc39dfb5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" alt="">
+                        <span>公開可能</span>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="">
+                        <img src="https://images.unsplash.com/photo-1602514528996-27155b6b7bb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" alt="">
+                        <span>公開可能</span>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="">
+                        <img src="https://images.unsplash.com/photo-1589251204996-3367cc27f084?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1110&q=80" alt="">
+                        <span>非公開</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box" data-section-name="Blogs">
+        <div class="content">
+            <h4>Blogs</h4>
+            <div class="item-wrap">
+                <div class="item">
+                    <a href="">
                         <img src="" alt="">
                     </a>
                 </div>
