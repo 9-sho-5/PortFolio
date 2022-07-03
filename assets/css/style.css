@@ -9,8 +9,18 @@
   src: url(../fonts/851tegaki_zatsu_normal_0883.ttf);
 }
 
+@font-face {
+  font-family: 'red-light';
+  src: url(../fonts/TheRedlightFree.ttf);
+}
+
+@font-face {
+  font-family: 'genjyu';
+  src: url(../fonts/GenJyuuGothicL-Bold.ttf), url(../fonts/GenJyuuGothicL-ExtraLight.ttf), url(../fonts/GenJyuuGothicL-Heavy.ttf), url(../fonts/GenJyuuGothicL-Light.ttf) url(../fonts/GenJyuuGothicL-Medium.ttf), url(../fonts/GenJyuuGothicL-Normal.ttf), url(../fonts/GenJyuuGothicL-Regular.ttf);
+}
+
 * {
-  font-family: 'pomeranian';
+  font-family: 'Noto Sans JP', sans-serif;
   color: #222222;
 }
 
@@ -36,6 +46,7 @@ section.top {
 }
 
 section .content {
+  position: relative;
   max-width: 1030px;
   margin: auto;
   padding: 90px 0;
@@ -46,7 +57,7 @@ section .content p {
   font-size: 18px;
   line-height: 40px;
   letter-spacing: 1.5px;
-  font-family: "tegaki";
+  font-family: "genjyu";
 }
 
 section .content .introduction {
@@ -65,20 +76,20 @@ section .content .name-wrap span {
   font-weight: 500;
   letter-spacing: 0.75px;
   text-align: left;
-  font-family: "tegaki";
+  font-family: "genjyu";
 }
 
 section .content .name-wrap .kana {
   font-size: 50px;
-  font-weight: 500;
-  letter-spacing: -5px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
   text-align: left;
 }
 
 section .content .card {
   position: absolute;
   top: 10%;
-  right: 10%;
+  right: 0%;
   height: 250px;
   width: 250px;
   border-radius: 50%;
@@ -160,18 +171,20 @@ section .content .card .card-back p span {
 }
 
 section .content h3 {
-  margin: 90px 0 30px;
+  margin: 90px 0 50px;
   font-size: 30px;
+  font-weight: 300;
   line-height: 32px;
   letter-spacing: 1.5px;
-  font-family: "tegaki";
+  text-align: center;
 }
 
 section .content h4 {
-  margin: 0 0 40px;
+  margin: 0 0 50px;
   font-size: 30px;
+  font-weight: 300;
   letter-spacing: 1.5px;
-  text-decoration: underline;
+  text-align: center;
 }
 
 section .content .year_ladder .year_item {
@@ -193,11 +206,10 @@ section .content .year_ladder .year_item:last-child {
 section .content .year_ladder .year_item .year {
   font-size: 26px;
   line-height: 36px;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 1.5px;
   color: #222222;
   white-space: nowrap;
-  font-family: "tegaki";
 }
 
 section .content .year_ladder .year_item .month-wrap {
@@ -230,7 +242,7 @@ section .content .year_ladder .year_item .month-wrap .month p {
   line-height: 32px;
   letter-spacing: 1.5px;
   color: #1A1A1A;
-  font-family: "tegaki";
+  font-family: "genjyu";
   word-break: break-all;
 }
 
@@ -244,15 +256,15 @@ section .content .year_ladder .year_item .month-wrap .month span {
   line-height: 32px;
   letter-spacing: 1.5px;
   color: #222222;
-  font-family: "tegaki";
+  font-family: "genjyu";
 }
 
 section .content .item-wrap {
   display: -ms-grid;
   display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -ms-grid-columns: (280px)[auto-fill];
       grid-template-columns: repeat(auto-fill, 280px);
   -webkit-column-gap: 25px;
@@ -283,25 +295,28 @@ section .content .item-wrap .item span {
   padding: 10px;
   background-color: #FFFFFF;
   border-radius: 20px;
-  font-family: "tegaki";
+  font-family: "genjyu";
 }
 
 h1 {
   position: absolute;
-  top: 90%;
-  left: 35%;
+  top: 50%;
+  left: 25%;
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
   font-size: 90px;
   font-weight: 500;
   letter-spacing: 0.1px;
-  color: #FFFFFF;
+  color: #222222;
+  font-family: "red-light";
 }
 
 .img-wrap {
   position: relative;
-  width: 100vw;
+  width: 70vw;
   height: 100vh;
+  display: block;
+  margin-left: auto;
   z-index: 0;
 }
 
@@ -323,9 +338,27 @@ h1 {
   z-index: 1;
 }
 
+.img-wrap::after {
+  content: "";
+  /* 疑似要素に必須 */
+  width: 27vw;
+  /* 幅いっぱい */
+  height: 100%;
+  /* 高さいっぱい */
+  display: block;
+  /* 高さを指定するためにブロック要素にする */
+  background: -webkit-gradient(linear, right top, left top, color-stop(0, rgba(255, 255, 255, 0)), color-stop(80%, #fff));
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0, #fff 80%);
+  /* 徐々に透明にする */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
 .img-wrap img {
   height: 100vh;
-  width: 100vw;
+  width: 70vw;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -449,7 +482,7 @@ footer {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  letter-spacing: -2px;
+  letter-spacing: 1.5px;
   z-index: 1;
 }
 
@@ -488,6 +521,10 @@ footer::after {
     font-size: 35px;
   }
   section .content .card {
+    top: 40px;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    right: 40px;
     height: 200px;
     width: 200px;
   }

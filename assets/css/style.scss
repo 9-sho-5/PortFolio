@@ -8,8 +8,25 @@
     src: url(../fonts/851tegaki_zatsu_normal_0883.ttf);
 }
 
+@font-face {
+    font-family: 'red-light';
+    src: url(../fonts/TheRedlightFree.ttf);
+}
+
+
+@font-face {
+    font-family: 'genjyu';
+    src: url(../fonts/GenJyuuGothicL-Bold.ttf),
+        url(../fonts/GenJyuuGothicL-ExtraLight.ttf),
+        url(../fonts/GenJyuuGothicL-Heavy.ttf),
+        url(../fonts/GenJyuuGothicL-Light.ttf)
+        url(../fonts/GenJyuuGothicL-Medium.ttf),
+        url(../fonts/GenJyuuGothicL-Normal.ttf),
+        url(../fonts/GenJyuuGothicL-Regular.ttf);
+}
+
 *{
-    font-family: 'pomeranian';
+    font-family: 'Noto Sans JP', sans-serif;
     color: #222222;
 }
 
@@ -30,6 +47,7 @@ section{
         z-index: 99;
     }
     .content{
+        position: relative;
         max-width: 1030px;
         margin: auto;
         padding: 90px 0;
@@ -38,7 +56,7 @@ section{
             font-size: 18px;
             line-height: 40px;
             letter-spacing: 1.5px;
-            font-family: "tegaki";
+            font-family: "genjyu";
         }
         .introduction{
             margin-top: 60px;
@@ -52,19 +70,19 @@ section{
                 letter-spacing: 0.75px;
                 text-align: 
                 left;
-                font-family: "tegaki";
+                font-family: "genjyu";
             }
             .kana{
                 font-size: 50px;
-                font-weight: 500;
-                letter-spacing: -5px;
+                font-weight: 300;
+                letter-spacing: 1.5px;
                 text-align: left;
             }
         }
         .card{
             position: absolute;
             top: 10%;
-            right: 10%;
+            right: 0%;
             height: 250px;
             width: 250px;
             border-radius: 50%;
@@ -126,17 +144,19 @@ section{
             }
         }
         h3{
-            margin: 90px 0 30px;
+            margin: 90px 0 50px;
             font-size: 30px;
+            font-weight: 300;
             line-height: 32px;
             letter-spacing: 1.5px;
-            font-family: "tegaki";
+            text-align: center;
         }
         h4{
-            margin: 0 0 40px;
+            margin: 0 0 50px;
             font-size: 30px;
+            font-weight: 300;
             letter-spacing: 1.5px;
-            text-decoration: underline;
+            text-align: center;
         }
         .year_ladder{
             .year_item{
@@ -151,11 +171,10 @@ section{
                 .year{
                     font-size: 26px;
                     line-height: 36px;
-                    font-weight: 400;
+                    font-weight: 300;
                     letter-spacing: 1.5px;
                     color: #222222;
                     white-space: nowrap;
-                    font-family: "tegaki";
                 }
                 .month-wrap{
                     width: 85%;
@@ -179,7 +198,7 @@ section{
                             line-height: 32px;
                             letter-spacing: 1.5px;
                             color: #1A1A1A;
-                            font-family: "tegaki";
+                            font-family: "genjyu";
                             word-break: break-all;
                         }
                         span{
@@ -190,7 +209,7 @@ section{
                             line-height: 32px;
                             letter-spacing: 1.5px;
                             color: #222222;
-                            font-family: "tegaki";
+                            font-family: "genjyu";
                         }
                     }
                 }
@@ -198,7 +217,7 @@ section{
         }
         .item-wrap{
             display: grid;
-            justify-content: center;
+            justify-content: space-between;
             grid-template-columns: repeat(auto-fill, 280px);
             column-gap: 25px;
             z-index: -1;
@@ -221,7 +240,7 @@ section{
                     padding: 10px;
                     background-color: #FFFFFF;
                     border-radius: 20px;
-                    font-family: "tegaki";
+                    font-family: "genjyu";
                 }
             }
         }
@@ -230,19 +249,22 @@ section{
 
 h1{
     position: absolute;
-    top: 90%;
-    left: 35%;
+    top: 50%;
+    left: 25%;
     transform: translateX(-50%) translateY(-50%);
     font-size: 90px;
     font-weight: 500;
     letter-spacing: 0.1px;
-    color: #FFFFFF;
+    color: #222222;
+    font-family: "red-light";
 }
 
 .img-wrap{
     position: relative;
-    width: 100vw;
+    width: 70vw;
     height: 100vh;
+    display: block;
+    margin-left: auto;
     z-index: 0;
     &::before {
         content: "";         /* 疑似要素に必須 */
@@ -255,9 +277,20 @@ h1{
         right: 0; 
         z-index: 1;
     }
+    &::after {
+        content: "";         /* 疑似要素に必須 */
+        width: 27vw;         /* 幅いっぱい */
+        height: 100%;        /* 高さいっぱい */
+        display: block;      /* 高さを指定するためにブロック要素にする */
+        background: linear-gradient(270deg, rgba(255,255,255,0) 0, #fff 80%); /* 徐々に透明にする */
+        position: absolute;
+        top: 0;
+        left: 0; 
+        z-index: 1;
+    }
     img{
         height: 100vh;
-        width: 100vw;
+        width: 70vw;
         object-fit: cover;
     }
 }
@@ -353,7 +386,7 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    letter-spacing: -2px;
+    letter-spacing: 1.5px;
     z-index: 1;
     &::after {
         content: "";         /* 疑似要素に必須 */
@@ -386,6 +419,9 @@ footer{
                 }
             }
             .card{
+                top: 40px;
+                transform: translateY(0);
+                right: 40px;
                 height: 200px;
                 width: 200px;
             }

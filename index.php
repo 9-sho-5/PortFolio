@@ -16,7 +16,7 @@ Template Name: メインページ
     <section class="box" data-section-name="Intro">
         <div class="content">
             <div class="name-wrap">
-                <span>楠瀬 法生</span>
+                <!-- <span>楠瀬 法生</span> -->
                 <h2 class="kana">HOSHO KUSUNOSE</h2>
             </div>
             <div class="card">
@@ -44,7 +44,7 @@ Template Name: メインページ
                 billageOSAKAにて、idemo合同会社代表の塩野さんと共に"ノーコードコミュニティ"を2021年12月に結成し、月に1回ノーコードツール(Bubble・STUDIO)を使用してイベントを行う。
 
             </p>
-            <h3>経歴</h3>
+            <h3>Biography</h3>
             <div class="year_ladder">
                 <div class="year_item">
                     <span class="year">2020年</span>
@@ -114,36 +114,29 @@ Template Name: メインページ
         <div class="content">
             <h4>Blogs</h4>
             <div class="item-wrap">
+            <?php
+                $post_args = array(
+                    'post_type' => 'blogs', // タクソノミー名の指定
+                    'posts_per_page' => 6, // ←出力したい投稿の数。-1と書くと「ぜんぶ」という指定になる
+                    'orderby' => 'date', // ←何を基準に並びかえるか。ここでは投稿順
+                    'order' =>'DECS', // ←並びかえかた。ここでは「降順」と指定
+                );
+
+                $wp_query = new WP_Query( $post_args );
+                if( $wp_query->have_posts() ):
+                    // 投稿（1個あたり）の内容ここから
+                    while( $wp_query->have_posts() ) : $wp_query->the_post(); 
+            ?>
                 <div class="item">
-                    <a href="">
+                    <a href="<?php the_permalink() ?>">
                         <img src="" alt="">
                     </a>
                 </div>
-                <div class="item">
-                    <a href="">
-                        <img src="" alt="">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="">
-                        <img src="" alt="">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="">
-                        <img src="" alt="">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="">
-                        <img src="" alt="">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="">
-                        <img src="" alt="">
-                    </a>
-                </div>
+            <?php
+                        // 投稿（1個あたり）の内容ここまで
+                    endwhile; 
+                endif;
+            ?>
             </div>
         </div>
     </section>

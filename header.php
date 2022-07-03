@@ -21,6 +21,10 @@
     <script src="https://kit.fontawesome.com/6df94479af.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/./assets/images/favicon.ico" type="image/x-icon">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
     <!-- ogp -->
     <meta property="og:url" content="<?php echo get_the_permalink(); ?>" />
 	<meta property="og:type" content="article" />
